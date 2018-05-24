@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function save() {
+            const form = document.createElement('form');
+            const input = document.createElement('input');
+            input.setAttribute('type', 'hidden')
+            input.setAttribute('name', 'html')
+            input.setAttribute('value', 'What is this shit')
+            form.appendChild(input)
+            form.action = "http://192.168.1.43:5000/test.pdf"
+            form.method = "POST"
+            document.body.appendChild(form);
+            form.submit();
+            form.remove();
+        }
+    </script>
+</head>
+
+<body>
+    <form action="http://192.168.1.43:5000/test.pdf" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="html" value="Hello <i>aaa</i>worls" />
+        <button type="submit">Submit</button>
+    </form>
+
+    <button onclick="save()">Save</button>
+</body>
+
+</html>
