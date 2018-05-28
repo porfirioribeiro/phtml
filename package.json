@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "nodemon --exec 'ts-node index.ts' -e ts",
     "start": "node index.js",
-    "build": "yarn run tsc"
+    "build": "tsc",
+    "prestart": "tsc"
   },
   "dependencies": {
+    "applicationfinsights": "^1.0.2",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
